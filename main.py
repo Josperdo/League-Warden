@@ -3,15 +3,24 @@ import os
 from dotenv import load_dotenv
 import requests
 import json
+import random
 
 # May need better way to store + access bot token long term
 load_dotenv()
 
 # reference discord.py library for function names
-
 client = discord.Client()
 
-# Initial Quote buildout
+sad_words = ["sad", "depressed", "unhappy",
+             "angry", "miserabe", "mad", "depressing"]
+
+starter_encouragements = [
+    "Cheer up!",
+    "Hang in there bro!",
+    "Relax, you're doing great."
+]
+
+# Initial buildout of functions and commands for example to expand upon/ alter later
 
 
 def get_quote():
@@ -31,9 +40,15 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('$inspire'):
+    msg = message.content
+
+    if msg.content.startswith('$inspire'):
         quote = get_quote()
         await message.channel.send('Hello!')
+
+    if any(word in msg for word in sad_words):
+        await message.channel.send(random.choice(starter_encouragements))
+
 
 # Runs bot
 client.run(os.getenv("DISCORD_TOKEN"))
