@@ -11,7 +11,6 @@ load_dotenv()
 # reference discord.py library for function names
 client = discord.Client()
 
-# Initial buildout of functions and commands for example to expand upon/ alter later
 
 @client.event
 async def on_ready():
@@ -20,7 +19,20 @@ async def on_ready():
 @client.event
 async def on_message(message):
     username = str(message.author).split('#')[0]
+    user_message = str(message.content)
+    channel = str(message.channel.name)
+    print(f'{username}: {user_message} ({channel})')
 
+    if message.author == client.user:
+        return
+    
+    if message.channel.name == 'general':
+        if user_message.lower() == 'hello':
+            await message.channel.send(f'Hellow {username}')
+            return
+        elif user_message.lower() == 'bye':
+            await message.channel.send(f'See you later {username}!')
+            
 
 # Runs bot
-client.run(os.getenv("DISCORD_TOKEN"))
+client.run(os.getenv("Token"))
