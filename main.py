@@ -1,9 +1,12 @@
 import discord
 import os
-from dotenv import load_dotenv
-import requests
 import json
+import requests
 import random
+from discord.ext import commands
+from dotenv import load_dotenv
+from uptime import upTime
+from collections import Counter
 
 # May need better way to store + access bot token long term
 load_dotenv()
@@ -35,4 +38,5 @@ async def on_message(message):
             
 
 # Runs bot
+upTime()
 client.run(os.getenv("Token"))
