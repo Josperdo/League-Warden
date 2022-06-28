@@ -3,10 +3,10 @@ import os
 import json
 import requests
 import random
+
 from discord.ext import commands
 from dotenv import load_dotenv
 from uptime import upTime
-from collections import Counter
 
 # May need better way to store + access bot token long term
 load_dotenv()
@@ -31,12 +31,11 @@ async def on_message(message):
     
     if message.channel.name == 'general':
         if user_message.lower() == 'hello':
-            await message.channel.send(f'Hellow {username}')
+            await message.channel.send(f'Hello {username}')
             return
         elif user_message.lower() == 'bye':
             await message.channel.send(f'See you later {username}!')
             
-
 # Runs bot + maintains uptime
 upTime()
 client.run(os.getenv("Token"))

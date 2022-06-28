@@ -1,1 +1,1 @@
-Discord bot intended to either ban friends from our server if they play too much League of Legends and or prompts the bot to post an "@everyone" message to be posted stating how many hours a player has playedover the course of a specified interval (or when the command is called to do so). Ideally it would compare the time played to some hilarious equalialet or conversion of time that is randomized everytime this message is posted.
+Discord bot intended to either ban friends from our server if they play too much League of Legends.
