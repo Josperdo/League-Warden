@@ -37,6 +37,6 @@ async def on_message(message):
             await message.channel.send(f'See you later {username}!')
             
 
-# Runs bot
+# Runs bot + maintains uptime
 upTime()
 client.run(os.getenv("Token"))

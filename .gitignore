@@ -1,4 +1,4 @@
-# dotenv environment variables file
+# dotenv environment variables file + etc
 .env
 *.json
 config.json
