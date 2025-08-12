@@ -1,1 +1,1 @@
-Bot intended to ban our friends from the Discord server if they play too much League of Legends or any other game we decide to add.
+A Discord moderation bot written in Python that tracks and bans users who exceed healthy gaming thresholds—built for our gaming community to foster better habits.
